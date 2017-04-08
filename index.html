@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Course on Javascript</title>
+</head>
+
+<body>
+
+	<script>
+
+		//Раздел 1. Введение. Урок 10. Операции над переменными
+
+		var surname='Sitnikov', name='Ivan', middleName='Alexandrovich';
+		var snm=surname+' '+name+' '+middleName; //Сложение переменных
+		document.write(snm+'<br>'); 
+		var myStreet='Olega '+'Koshevogo ', myNumberHouse='2-', myFlat='314', myAddress;
+		myAddress=myStreet+myNumberHouse+myFlat; //Сложение переменных
+		document.write(myAddress+'<br>');
+		var countWater=145, countJuice=200, sum;
+		sum=countWater+countJuice; //Сложение переменных
+		document.write(sum+'<br><br>');
+
+
+		// Урок 11. Изменение значений переменных
+
+		var count=32;
+		count=count-16;
+		count+=25;
+		count++;
+		count--;
+		count=40; //Новое значение 
+		document.write(count+'<br><br>');
+
+
+		// Домашнее задание после 11 урока
+
+		 var planet='Земля', star='Cолнца', days=365, countOfPeople='7 млрд';
+		document.write('<p>Мы живём на планете '+planet+', она совершает один оборот вокруг '+star+' за '+days+' дней. Население нашей планеты составляет примерно '+countOfPeople+' человек.</p>'+'<br><br>');
+		/*Мы живём на планете "Земля", она совершает один оборот вокруг Cолнца за 365 дней.
+		Население нашей планеты составляет примерно 7 млрд человек.*/
+
+
+		// Раздел 2. Массивы Урок 12. Введение в массивы
+
+		var days=['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+		document.write(days[2]+'<br />');
+		var myArray=[7, "Марс", 88, "Венера"];
+		document.write(myArray[1]+'<br>');
+		var number=4;
+		document.write(days[number]+'<br><br>');
+		var cities=new Array('Москва', 'Лондон', 'Париж');
+		var cities2=new Array(5); //Создание 5-ти элементов
+
+
+		// Домашнее задание после 12 урока
+
+		var country=['Россия', 'Украина', 'Белоруссия', 'Казахстан', 'США'];
+		var population=[142, 46, 10, 16, 310];
+		document.write(country[0]+' - население: '+population[0]+' млн. человек<br>');
+		document.write(country[1]+' - население: '+population[1]+' млн. человек'+'<br>');
+		document.write(country[2]+' - население: '+population[2]+' млн. человек'+'<br>');
+		document.write(country[3]+' - население: '+population[3]+' млн. человек'+'<br>');
+		document.write(country[4]+' - население: '+population[4]+' млн. человек'+'<br><br>');
+
+
+		// Урок 13. Свойство length + добавление/удаление элементов
+
+		var days=['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+		var count=days.length; //Общее кол-во элементов в массиве
+		document.write('Количество элементов: '+count+'<br>');
+
+		var students=['Ивнов Дмитрий', 'Петров Павел', 'Сидоров Михаил', 'Потапов Эдуард'];
+		students.push('Савельев Антон'); //Добавление объекта в конец списка
+		students.unshift('Тимонов Вячеслав'); //Добавление объекта в начало списка
+		students.pop(); //Удаление последнего объекта из списка
+		students.shift(); //Удаление первого объекта из списка
+		document.write('Первый студент: '+students[0]+'<br><br>');
+
+
+		//Домашнее задание после 13 урока
+
+		var fruits=['Апельсин', 'Банан', 'Груша'];
+		document.write('На данный момент у нас в корзине фруктов: '+ fruits.length+'<br>');
+		fruits.push('Яблоко', 'Ананас'); //Добавление яблока и ананаса в конец списка
+		fruits.unshift('Грейпфрут'); //Добавление грейпфрута в начало списка
+		document.write('На данный момент у нас в корзине фруктов: '+ fruits.length+'<br>');
+		fruits.pop(); //Удаление последнего элемента из списка
+		fruits.shift(); //Удаление первого элемента из списка
+		document.write('На данный момент у нас в корзине фруктов: '+ fruits.length+'<br><br>');
+
+
+		//Урок 14. Метод splice()
+
+		var students = ['Абаканов Сергей', 'Алалина Алина', 'Гагарин Матвей', 'Хантухова Лейла', 'Савельев Игорь'];
+		students.splice(3, 2); //Удаление 4 и 5 объектов
+
+		students.splice(2, 0, 'Элла Мухачева', 'Василий Брейденбург'); //Добавление 2-х объектов перед третьим
+
+		students.splice(1, 2, 'Василий Петров', 'Джейсон Баттон'); //Замена второго и третьего объектов новыми двумя
+		document.write(students + '<br><br>');
+
+
+		//Домашнее задание после 14 урока
+
+		var fruits = ["банан", " мандарин", " манго "];
+		fruits.splice(fruits.length - 2, 1, ' ананас'); //Замена предпоследнего элемента 
+		document.write(fruits + '<br><br>');
+
+
+		//Урок 15. Другие методы для работы с массивами
+
+		var students = ['Абаканов Сергей', 'Гагарин Матвей', 'Хантухова Лейла', 'Алалина Алина', 'Савельев Игорь' + '<br>'];
+		var students2 = ['Василий Петров', 'Джейсон Баттон'];
+		var total = students.concat(students2); //Соединение массивов
+		var happyStudents = students.slice(1, 3); //Вырезание 2-го и 3-го объектов из массива (!метод не сработал)
+		document.write('В субботу идут на уборку эти студенты: ' + happyStudents);
+		document.write(total + '<br>');
+		document.write(students.reverse() + '<br>'); //Переворачивание массива справа налево
+		document.write(students.sort() + '<br>'); //Сортировка массива в алфавитном порядке
+		document.write(students.join('.') + '<br><br>'); //Разделение элементов массива точкой (можно ставить др. символы)
+
+
+		// Урок 16. Многомерные массивы
+
+		var students = ['Абаканов Сергей', 'Гагарин Матвей', 'Хантухова Лейла', 'Алалина Алина', 'Савельев Игорь' + '<br>'];
+		var students2 = ['Виталий Петров', 'Джейсон Баттон'];
+		var students3 = ['Элла Мухачева', 'Василий Брейденбург'];
+
+		var myCollege = [students, students2, students3];
+		document.write(myCollege[1][1] + '<br>'); //Вытаскивание 2-го элемента 2-го массива в многом. массиве
+
+		var appleSorts = ['Антоновка', 'Семеринка']; 
+		var orangeSorts = ['Египетский апельсин', 'Турецкий апельсин', 'Апельсин из ЮАР'];
+		var fruits = ['Банан', appleSorts, 'Груша', orangeSorts];
+		document.write('Наш любимый фрукт: ' + fruits[3][1] + '<br><br>'); //Выведется "Турецкий апельсин"
+
+
+		//Раздел 3. Конструкция if-else. Урок 17. Основы
+
+		var pogoda = 'ясно';
+		if (pogoda == 'ясно') { //Условие 
+			document.write('Ура! Мы едем на пляж!  <br>'); //Выполнение
+		}
+		else { //Другое условие
+			document.write('Чтож, значит мы пойдем играть в боулинг!  <br>'); //Другое выполнение
+		}
+		var count = 50;
+		if (count <= 10) {
+			document.write('Переменная count меньше или равна десяти  <br>');
+		}
+		else {
+			document.write('Переменная count больше десяти  <br><br>');
+		}
+
+
+		//Домашнее задание после 17 урока
+
+		var students = ["Абаканов Сергей", "Гагарин Матвей", "Хантухова Лейла", "Алалина Алина",  "Сакуров Иоган"];
+		if (students.length >= 3) {
+			document.write("Это большой массив, в котором как минимум 3  элемента <br><br>");
+		}
+		else {
+			document.write("Это маленький массив, в  котором менее 3-х элементов <br><br>");
+		}
+
+
+		// Урок 18. Множественные условия
+
+		var pogoda = 'ясно';
+		var car = 'Да';
+
+		if (pogoda == 'ясно' && car == 'Да') {  //Знак && задает 2 обязательных условия
+			document.write('Ура! Мы едем на пляж! <br>'); 
+		}
+		else { 
+			document.write('Чтож, значит мы пойдем играть в боулинг! <br>'); 
+		}
+
+		var myFriend = 'Паша';
+		if (myFriend == 'Саша' || myFriend == 'Паша') { //Знак || задает 1 из обязательных условий
+			document.write('Идем играть в бильярд <br><br>');
+		}
+		else {
+			document.write('Идем играть в теннис <br><br>');
+		}
+
+
+		// Домашнее задание после 18 урока
+
+		var students = ["Дмитрий", "Алексей", "Петр", "Виктор"];
+		if (students.length == 4 && students[students.length-1]) {
+			document.write('Этот массив мне подходит <br><br>');
+		}
+		else {
+			document.write('Этот массив мне не подходит <br><br>');
+		}
+
+
+		// Урок 19. Несколько условий одновременно
+
+   		var kefir = "нет", ryazenka = "нет", yogurt = "да";
+   		if (kefir == 'да') {
+   			document.write('Мы покупаем кефир');
+   		} 
+   		else if (ryazenka == 'да') {
+   			document.write('Мы покупаем ряженку');
+   		}
+   		else if (yogurt == 'да') {
+   			document.write('Мы покупаем йогурт <br><br>');
+   		}
+   		else {
+   			document.write('Мы ничего не покупаем и уходим из магазина');
+   		}
+
+
+   		// Домашнее задание после 19 урока
+
+   		var trafficLight = 'green';
+   		if (trafficLight == 'red') {
+   			document.write('To stand!');
+   		}
+   		else if (trafficLight == 'yellow') {
+   			document.write('To be going to go!');
+   		}
+   		else {
+   			document.write ("Let's go! <br><br>");
+   		}
+
+
+   		// Урок 20. Это важно знать
+
+   		var number = true;
+   		if (number) {
+   			document.write ("Истина <br><br>");
+   		}
+   		else {
+   			document.write ("Ложь");
+   		}
+   		 /*Если в условии переменной не задается значение через "==", то все кроме "" и false выведет истину. Булевы значения пишется всегда без кавычек. Их также можно подставлять в качестве значений в условии.*/
+
+
+   		 // Раздел 4. Циклы. Урок 21. Цикл while 
+
+   		 var i = 1;
+   		 while (i <= 5) { //Пока i меньше/равно ста
+   		 	document.write (i + '<br>');
+   		 	i++; 
+   		 }
+   		 document.write ("<br>");
+
+
+   		 // Урок 22. Проработка массива в цикле while 
+
+   		 var students = ['Абаканов Сергей', 'Гагарин Матвей', 'Хантухова Лейла', 'Алалина Алина', 'Савельев Игорь'];
+   		 var i = 0; //Установка счетчика
+
+   		 while (i < students.length) { //Свойство students.length применяется к кол-ву элементов, а не к кол-ву их индексов
+   		 	document.write (students[i] + '<br>');
+   		 	i++; //Увеличение счетчика
+   		 }
+   		 document.write ("<br>");
+
+
+   		 // Домашнее задание после 22 урока
+
+   		 var students2 = ['Абаканов Сергей', 'Алалина Алина', 'Гагарин Матвей', 'Хантухова Лейла', 'Викторов Сергей',  'Масалкин Андрей', 'Петравкин Алексей', 'Московин Павел', 'Данилов Станислав'];
+   		 var i = 2;
+
+   		 while (i < 7) {
+   		 	document.write (students2[i] + '<br>');
+   		 	i++;
+   		 }
+   		 document.write ("<br>");
+
+
+   		 // Урок 23. Цикл for
+
+   		 var students = ['Абаканов Сергей', 'Гагарин Матвей', 'Хантухова Лейла', 'Алалина Алина', 'Савельев Игорь'];
+   		
+   		 for (var i = 0; i < students.length; i++) { //3 параметра в одной строке
+   		 	document.write (students[i] + '<br>');
+   		 }
+   		 document.write ("<br>");
+
+
+   		 // Домашнее задание после 23 урока
+
+   		 for (var i = 1; i < 8; i++) {
+   		 	document.write ("Квадрат " + i + " равен " + i*i + '<br>');
+   		 }
+   		 document.write ("<br>");
+
+
+   		 // Раздел 5. Методы объекта window. Урок 24. Методы alert(), prompt() и confirm() 
+
+   		 // var newWin = window.open ("", "Новое окно", "width=400, height=300"); //Открытие нового окна
+   		 // newWin.document.write ("Привет, мир!"); //Вывод информации в новом окне
+
+   		 // window.alert ("Я модальное окно!"); //Вывод модального окна
+   		 //var age = prompt ("Сколько вам лет?", "Мой возраст: "); //Вывод окна с вопросом; все, что вводит пользователь, помещается в переменную age
+   		 //alert ("Ваш возраст: " + age); //Вывод введенного пользователем значения
+
+   		 //var answer = confirm ("Вы согласны ехать с нами в путешествие?"); //Вывод вопроса с двумя вариантами, введенное пользователем значение помещается в переменную answer
+   		 /*if (answer) { //Условие, зависящее от того, что введет пользователь
+   		 	document.write ("Ура! Едем вместе!");
+   		 } else {
+   		 	document.write ("Ок, поедем вместе в следующий раз!");
+   		 }*/
+
+
+   		 // Домашнее задание №1 к уроку 24
+
+   		/* var age = prompt ("Сколько вам лет?");
+
+   		 if (age > 20) {
+   		 	document.write ("Вы уже взрослый человек!");
+   		 } else {
+   		 	document.write ("Вы еще молоды, у Вас  все впереди!");
+   		 }*/
+
+
+   		 // Домашнее задание №2 к уроку 24
+
+   		 /*var age = prompt ("Сколько вам лет?");
+   		 var year = prompt ("Какой сейчас год?");
+
+   		 while (age > 0) {
+   		 	document.write ("В " + year + " году вам было " + age + " лет: " + "<br>");
+   		 	age --;
+   		 	year--;
+   		 }
+   		 document.write ("<br>");*/
+
+
+   		 // Раздел 6. Функции. Урок 25. Введение в функции
+
+   		 function summa (number_1, number_2) { //summa - название функции, в скобках задаются параметры
+   		 	var itog  = number_1 + number_2; //Перенос суммы заданных параметров в переменную itog 
+   		 	document.write ("Сумма этих чисел равна: " + itog + "<br><br>"); //Вывод суммы
+   		 }
+
+   		 var car = 180;
+   		 var moto = 200;
+
+   		 //summa (number_1, number_2); Вызов функции с указанными параметрами
+   		 summa (car, moto); //В любое время можно вызвать функцию и подставить параметры из других переменных
+
+
+   		 // Домашнее задание №1 к уроку 25
+
+   		 function square (number) {
+   		 	var result = number * number;
+   		 	document.write ("Квадрат переданного числа равен " + result + "<br><br>");
+   		 }
+   		 square (2);
+
+
+   		 // Домашнее задание №2 к уроку 25
+
+   		 /*function cube () {
+   		 	var number = prompt ("Введите число, куб которого вы хотите узнать");
+   		 	var total = number * number * number;
+   		 	document.write ("Куб введенного вами числа равен " + total + "<br><br>");
+   		 }
+   		 cube ();*/
+
+
+   		 // Урок 26. Область видимости переменных функции
+
+   		 //var number = 56; //Глобальная переменная, которую можно использовать неоднократно
+
+   		 //function myFun () {
+   		 	//document.write (number); //Вызов глобальной переменной, находящейся вне функции
+   		 //}
+   		 //myFun ();
+
+   		 function myFun_2 () {
+   		 	var itog = 45; //Локальная переменная, заданная внутри функции и работающая только внутри нее
+   		 	document.write (itog + "<br><br>");
+   		 }
+   		 myFun_2 ();
+
+
+   		 // Урок 27. Возвращение результата функцией
+
+   		 /*function square (num) {
+   		 	var result = num * num;
+   		 	return result; //Возврат значения функции без вывода его на экран
+   		 }
+
+   		 var total = square (3);
+
+   		 alert (total);*/
+
+
+   		 // Домашнее задание к 27-му уроку
+
+   		 /*function fio () {
+   		 	var name = prompt ("Ваше имя:");
+   		 	var surname = prompt ("Ваша фамилия:");
+   		 	var lastname = prompt ("Ваше отчество");
+   		 	var result = surname + " " + name + " " + lastname;
+   		 	return result;
+   		 }
+
+   		 alert (fio());*/
+
+
+   		 // Раздел 7. Свойства и методы строковых объектов. Урок 28. Свойство length
+
+   		 var name = "Иван";
+   		 document.write ("Длина объекта name: " + name.length + "<br><br>"); //Кол-во символов в строке
+
+
+   		 // Домашнее задание №1 к уроку 28
+
+   		 /*function letterCount (myString) {
+   		 	return myString.length;
+   		 }
+
+   		 var userWord = prompt ("Введите любое слово");
+   		 var result = letterCount (userWord);
+   		 document.write ("В введенном слове " + result + " букв" + "<br><br>");*/
+
+
+   		 // Домашнее задание №2 к уроку 28
+
+   		 /*function letterCount (myString) {
+   		 	if (myString.length < 10) {
+   		 		var result = "В введенном слове менее 10 букв";
+   		 	}
+   		 	else if (myString.length > 10 ) {
+   		 		var result = "В введенном слове более 10 букв";
+   		 	}
+   		 	else {
+   		 		var result = "В введенном слове ровно 10 букв";
+   		 	}
+   		 	return result;
+   		 }
+
+   		 var userWord = prompt ("Введите любое слово");
+
+   		 document.write (letterCount (userWord) + "<br><br>");*/
+
+
+   		 // Урок 29. Методы toLowerCase() и toUpperCase()
+
+   		var fruit = "Апельсин";
+   		var newFruit = fruit.toUpperCase(); //Вывод переменной в верхнем регистре
+   		document.write (newFruit + "<br><br>");
+
+
+   		// Домашнее задание к уроку 29
+
+   		/*var answer = "меркурий";
+   		var userAnswer = prompt ("Какая первая планета от Солнца?");
+   		var result = userAnswer.toLowerCase(); //Перевод ответа в нужный (нижний) регистр
+   		if (answer == result) {
+   			document.write ("Вы ответили верно");
+   		}
+   		else {
+   			document.write ("Вы ошиблись");
+   		}*/
+
+
+   		// Урок 30. Методы indexOf() и lastIndexOf()
+
+   		var myString = "Очень горячее Солнце. Очень большое Солнце.";
+   		// document.write (myString.indexOf ("Солнце") + "<br>"); //Поиск этого слова в строке переменной, начинается с 14-го символа
+   		document.write (myString.lastIndexOf ("Солнце") + "<br><br>");  //Поиск с конца строки
+
+
+   		// Домашнее задание к уроку 30
+
+   		var mySite = "http://ruseller.com";
+
+   		function myCheck (myString) {
+   			if (myString.indexOf ("http://") == -1) {
+   				document.write ('В названии сайта не присутствует указание протокола "http://"');
+   			}
+   			else {
+   				document.write ('В названии сайта присутствует указание протокола "http://"<br><br>');
+   			}
+   		}
+
+   		myCheck (mySite);
+
+
+   		// Урок 31. Метод slice
+
+   		var mySite = "http://ruseller.com";
+   		var myDomain = mySite.slice(7); //Вырез первых семи символов (http://) из http://ruseller.com
+   		var myRoot = mySite.slice(7,15); //Вырез 'ruseller'
+   		document.write (myRoot + "<br><br>");
+
+
+   		// Домашнее задание к уроку 31
+
+   		var myStr = "Хороший день.";
+   		var day = myStr.slice(8,12);
+   		document.write (day + "<br><br>");
+
+
+   		// Урок 32. Методы charAt() и charCodeAt()
+
+   		var city = "Самара";
+   		//document.write (city.charAt(2)); //Показ символа 3-го элемента (буква "м")
+   		//document.write (city.charCodeAt(2)); //Показ кода 3-го элемента
+   		var name = "Ivan";
+
+   		/*var rusLetters = "аяАЯ"; //Перечень кодов русских символов от "а" до "я" и от "А" до "Я"
+   		document.write (rusLetters.charCodeAt(0) + "<br>");
+   		document.write (rusLetters.charCodeAt(1) + "<br>");
+   		document.write (rusLetters.charCodeAt(2) + "<br>");
+   		document.write (rusLetters.charCodeAt(3) + "<br>");
+   		1040-1103 (Диапазон кодов рус. символов от "А" до "я")*/
+
+   		for (var i =0; i < name.length; i++) {
+   			if (name.charCodeAt(i) < 1040 || name.charCodeAt(i) > 1103) {
+   				document.write ("Найден символ, который не попадает в диапазон русских букв. Это символ <strong>" + name.charAt(i) + "</strong>" + "<br>");
+   			}
+   		}
+
+   		document.write ("<br>");
+
+
+   		// Домашнее задание к 32-му уроку
+
+   		var students = ["Илья","Greg", "Алина", "John"];
+
+   		for (var i = 0; i < students.length; i++) {
+   			for (var j = 0; j < students[i].length; j++) {
+   				if (students[i].charCodeAt(j) < 1040 || students[i].charCodeAt(j) > 1103) {
+   					document.write ("Найден символ, который не попадает в диапазон русских букв. Это символ <strong>" + students[i].charAt(j) + "</strong> в элементе " + students[i] + "<br>");
+   				}
+   			}
+   		}
+
+   		document.write ("<br>");
+
+
+   		// Уроки 33, 34. Метод search() - введение в регулярные выражения
+
+   		var test = "Вот мы и приехали!";
+   		var regV = /мы/; //Шаблон, хранящий в себе регулярное выражение
+   		var result = test.search(regV); //Команда найти в перем. test выражение "мы"
+   		document.write (result + "<br>"); //Вывод индекса элемента
+
+   		var myIndex = "450000";
+   		var regV = /\d\d\d\d\d\d/; //Поиск цифры от 0 до 9 шесть раз подряд. Альтернативная запись var regV = /\d{6}/;
+   		var result = myIndex.search(regV);
+   		document.write (result + "<br><br>");
+   		// Шпаргалка по регулярным выражениям - http://www.exlab.net/tools/sheets/regexp.html
+
+
+   		// Домашнее задание к урокам 33 и 34
+
+   		var forTesting = "8 пингвинов и 9 карасей.";
+
+   		function numberTest (myString) {
+   			var regV = /^\d/;
+
+   			if (myString.search(regV) == -1) {
+   				document.write ("Строка начинается не с цифры");
+   			}
+   			else {
+   				document.write ("Строка начинается с цифры<br><br>");
+   			}
+   		}
+
+   		numberTest (forTesting);
+
+
+	</script>
+
+</body>
+
+</html>
